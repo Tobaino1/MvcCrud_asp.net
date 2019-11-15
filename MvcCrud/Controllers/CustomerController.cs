@@ -29,6 +29,18 @@ namespace MvcCrud.Controllers
                 
         }
 
+        //below Controller is for all the registered / verified customers without CRUD (there is No need to use int id 
+        //    to check each data since we only want to list them / view / read them )
+        // GET: Customer/Details/5
+        public ActionResult DetailsAll()
+        {
+            using (DBModels db = new DBModels())
+            {
+                return View(db.Customers.ToList()) ;
+            }
+
+        }
+
         // GET: Customer/Create
         public ActionResult Create()
         {

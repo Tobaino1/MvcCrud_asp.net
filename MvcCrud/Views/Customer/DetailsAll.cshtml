@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MvcCrud.Models.Customer>
+
+@{
+    ViewBag.Title = "DetailsAll";
+}
+
+<h2>List of Registered / Verified Customers</h2>
+
+ @*replication of details page (created another model for it in the controller then added a view that will be a list) 
+this page will display the registered customer
+I removed CUD (create, update, delete) for the purpose of having R (retrieve / view) for visitors. 
+Admin will use the Details that has (CRUD) for opertions*@
+
+
+@*below link is to create new customer
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<br /><br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>*@
+        @*<th></th>*@
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>*@
+        
+        @*other crud links
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CustomerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerID })
+        </td>*@
+    </tr>
+}
+
+</table>
