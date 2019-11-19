@@ -37,7 +37,7 @@ namespace MvcCrud.Controllers
                     db.RegisterUser.Add(registerUser);
                     db.SaveChanges();
                 }
-                ViewBag.Message = "SUCCESS MESSAGE, User Details has been successfully Saved";
+                ViewBag.Message = "User Details Saved";
                 return View("Register");         
             }
             else
