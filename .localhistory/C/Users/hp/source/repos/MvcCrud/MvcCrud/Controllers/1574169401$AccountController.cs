@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security; //add this for basic security feature
 using MvcCrud.Models; //add this i.e name of application.models
-using MvcCrud.ViewModel; //add this it will be created as a class later in the viewmodel folder
 
 
 namespace MvcCrud.Controllers
@@ -34,7 +33,7 @@ namespace MvcCrud.Controllers
                //If the model state is valid i.e the form values passed the validation then we are storing d user's details in DB
                 {
                     //save all the details in registeruser object
-                    db.RegisterUser.Add(registerUser);
+                    db.RegisterUsers.Add(registerUser);
                     db.SaveChanges();
                 }
                 ViewBag.Message = "User Details Saved";
@@ -90,7 +89,7 @@ namespace MvcCrud.Controllers
             using (var dataContext = new RegLoginConstring())
             {
                 //Retrieving the user details from db based on username and password enetered by the user
-                RegisterUser user = dataContext.RegisterUser.Where(query => query.Email.Equals(theuser.Email) && query.Password.Equals(theuser.Password)).SingleOrDefault();
+                RegisterUser user = dataContext.RegisterUsers.Where(query => query.Email.Equals(theuser.Email) && query.Password.Equals(theuser.Password)).SingleOrDefault();
 
                 //if user is present, then true is returned.
                 if (user == null)

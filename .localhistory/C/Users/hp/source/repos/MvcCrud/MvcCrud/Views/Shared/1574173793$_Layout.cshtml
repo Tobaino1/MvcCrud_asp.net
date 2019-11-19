@@ -27,29 +27,6 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Verified / Registered Customers", "DetailsAll", "Customer")</li>
 
-
-                    <li>
-
-                        @if (Request.IsAuthenticated)
-                        {
-
-                            @Html.ActionLink("Log Out", "Logout", "Account")
-                        }
-                        else
-                        {
-
-                            @Html.ActionLink("Login", "Login", "Account")
-                        }
-                    </li>
-                    <li>
-                        @if (!Request.IsAuthenticated)
-                        {
-                            @Html.ActionLink("Register", "Register", "Account")
-                        }
-
-                    </li>
-
-
                     @*the page you want to visit will be the middle link, first link is the name of page that will appear in the menubar/link, the last link is controller*@
 
                 </ul>

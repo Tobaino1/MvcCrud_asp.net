@@ -90,7 +90,7 @@ namespace MvcCrud.Controllers
             using (var dataContext = new RegLoginConstring())
             {
                 //Retrieving the user details from db based on username and password enetered by the user
-                RegisterUser user = dataContext.RegisterUser.Where(query => query.Email.Equals(theuser.Email) && query.Password.Equals(theuser.Password)).SingleOrDefault();
+                RegisterUser user = dataContext.RegisterUsers.Where(query => query.Email.Equals(theuser.Email) && query.Password.Equals(theuser.Password)).SingleOrDefault();
 
                 //if user is present, then true is returned.
                 if (user == null)

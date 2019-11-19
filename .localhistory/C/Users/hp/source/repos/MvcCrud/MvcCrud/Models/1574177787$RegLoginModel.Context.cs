@@ -25,6 +25,6 @@ namespace MvcCrud.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<RegisterUser> RegisterUser { get; set; }
+        public virtual DbSet<RegisterUser> RegisterUsers { get; set; }
     }
 }
