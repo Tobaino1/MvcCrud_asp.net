@@ -15,7 +15,7 @@ namespace MvcCrud.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "PAOYEK VENTURES.";
+            ViewBag.Message = "PAOYEK INDUSTRY.";
 
             return View();
         }
