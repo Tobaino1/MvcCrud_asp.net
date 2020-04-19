@@ -13,7 +13,7 @@ namespace MvcCrud.Controllers
     public class AccountController : Controller
     {
         // GET: Account (home page)
-        public ActionResult Index()
+        public ActionResult Index() // add this view
         {
             return View();
         }
@@ -25,7 +25,7 @@ namespace MvcCrud.Controllers
         }
 
         [HttpPost]
-        public ActionResult SaveRegistrationDetails(RegisterUser registerUser) // (dbname  parameter)
+        public ActionResult SaveRegistrationDetails(RegisterUser registerUser) // class that has all the ppties/data in the db and the parameter i.e (Registeruser  registeruser) its in d model
         {
             if  (ModelState.IsValid)
             {
